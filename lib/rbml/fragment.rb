@@ -8,8 +8,8 @@ module RBML
       instance_eval(&body) if body
     end
 
-    def to_html(indent = 0)
-      @contents.map{|fragment| fragment.to_html(indent)}.join("\n")
+    def to_html(*args)
+      contents.map{|fragment| fragment.to_html(*args)}.join("\n")
     end
 
     def contents

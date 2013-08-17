@@ -5,7 +5,7 @@ module RBML
     include Enumerable
     extend Forwardable
 
-    def_delegators :@contents, :[], :[]=, :each
+    def_delegators :@contents, :[], :[]=, :each, :empty?
 
     def initialize(contents=[])
       @contents = contents.to_a
