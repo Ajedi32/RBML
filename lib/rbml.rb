@@ -3,11 +3,10 @@ require 'rbml/dsl'
 require 'rbml/fragment'
 require 'rbml/text'
 require 'rbml/html_fragment'
+require 'rbml/document'
 
 module RBML
   def self.parse(file)
-    fragment = Fragment.new
-    fragment.send(:instance_eval, File.read(file), file)
-    fragment
+    Template.parse(file)
   end
 end

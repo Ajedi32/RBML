@@ -21,6 +21,10 @@ Here's what it looks like:
           a("RBML", href: "https://github.com/Ajedi32/RBML")
           contents << " is a markup language with a pure-Ruby syntax!"
         }
+
+        p {
+          text("You can access data passed to the template through the `data` object:")
+          div(data[:hello])
+        }
       }
     }
-

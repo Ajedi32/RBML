@@ -4,7 +4,7 @@ module RBML
       @content = content
     end
 
-    def to_html(indent = 0)
+    def render(indent = 0)
       @content.gsub("\n", "\n#{"\t"*indent}")
     end
   end

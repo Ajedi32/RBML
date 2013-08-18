@@ -10,7 +10,7 @@ module RBML
       instance_eval(&body) if body
     end
 
-    def to_html(indent = 0)
+    def render(indent = 0)
       html = "<#{@tag_name}#{attributes_html}>"
 
       html << "\n" unless @options[:inline] || contents.empty?
@@ -25,7 +25,7 @@ module RBML
     private
 
     def inner_html(indent = 0)
-      html = contents.map{|fragment| fragment.to_html(indent)}
+      html = contents.map{|fragment| fragment.render(indent)}
       html = html.join("\n#{"\t"*indent}")
       html = ("\t"*indent) + html unless @options[:inline] || contents.empty?
 
